@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Add Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+   <!--Add Moment JS-->
+   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+
+<body>
+    <h1 class="title">Train Schedular</h1>
+    <div class="card">
+        <h2 class="card-header">Current Train Schedule</h2>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Add Train INfo</div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label style="font-weight: bold;" for="InputTrainName">Train Name</label>
+                    <input type="text" class="form-control" id="InputTrainName">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;" for="InputDestination">Destination</label>
+                    <input type="text" class="form-control" id="InputDestination">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;" for="InputFirstTrainTime">First Train Time (HH:mm - military
+                        time)</label>
+                    <input type="text" class="form-control" id="InputFirstTrainTime">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;" for="InputFrequency">Frequency (min)</label>
+                    <input type="number" class="form-control" id="InputFrequency">
+                </div>
+                <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Add jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Link my JavaScript file -->
+    <script src="assets/javascript/app.js"></script>
+
+
+</body>
+
+</html>
