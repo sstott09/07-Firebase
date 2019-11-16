@@ -1,16 +1,19 @@
-//your web app's firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCXNNdy24-ZDBX2sOpuixfCTetjGPO78eU",
-    authDomain: "train-schedule-9ca7a.firebaseapp.com",
-    databaseURL: "https://train-schedule-9ca7a.firebaseio.com",
-    projectId: "train-schedule-9ca7a",
-    storageBucket: "train-schedule-9ca7a.appspot.com",
-    messagingSenderId: "379066176230",
-    appId: "1:379066176230:web:34deee16da1deed5b3a127",
-    measurementId: "G-TSE9EL1PGM"
-  };
-//Initialize firebase
-firebase.initializeApp(firebaseConfig);
+  // Your web app's Firebase configuration
+//   var firebaseConfig = {
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXNNdy24-ZDBX2sOpuixfCTetjGPO78eU",
+        authDomain: "train-schedule-9ca7a.firebaseapp.com",
+        databaseURL: "https://train-schedule-9ca7a.firebaseio.com",
+        projectId: "train-schedule-9ca7a",
+        storageBucket: "train-schedule-9ca7a.appspot.com",
+        messagingSenderId: "379066176230",
+        appId: "1:379066176230:web:34deee16da1deed5b3a127",
+        measurementId: "G-TSE9EL1PGM"
+      };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 //create a database variable
 var database = firebase.database();
@@ -34,14 +37,14 @@ $("#add-train-btn").on("click", function (event) {
     $("#InoutFrequency").val("");
 
 })
-database.ref().on("child-added", function(childSnapshot){
+database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
     var trainName = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
     var frequency = childSnapshot.val().frequency;
     var firstTrainTime = childSnapshot.val().firstTrainTime;
 
-    var firstTimeConverted = moment(firstTrainTime, "HH:mm").substract(1,"day");
+    var firstTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1,"day");
     var trainDiff = moment().diff(moment(firstTimeConverted), "minutes");
     var trainRemainder = trainDiff % frequency;
     var minutesTillArrival = frequency - trainRemainder;
