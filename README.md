@@ -24,8 +24,8 @@ Demo Site: [This link will take you to the game](https://sstott09.github.io/07-F
 
 ## Key Topics
 * Firebase
+* Moment
 * AJAX
-* GIPHY API
 * Code comments
 * Console
 * Variables
@@ -46,11 +46,15 @@ Demo Site: [This link will take you to the game](https://sstott09.github.io/07-F
 * Event handling
 
 ## Requirements
+ * [Firebase](https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js)
  * [Bootstrap](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css)
  * [jQuery](https://code.jquery.com/jquery-3.4.1.min.js)
+ * [Moment](https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js)
  
 
 ## Build Tools
- * GIPHY API/AJAX
+ * AJAX
  * Bootstrap
+ * JavaScript
  * jQuery
+ * Firebase
